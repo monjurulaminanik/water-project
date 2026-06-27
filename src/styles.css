@@ -1,0 +1,213 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Water palette */
+  --color-water-50: #F0F9FF;
+  --color-water-100: #E0F2FE;
+  --color-water-200: #BAE6FD;
+  --color-water-300: #7DD3FC;
+  --color-water-400: #38BDF8;
+  --color-water-500: #0EA5E9;
+  --color-water-600: #0284C7;
+  --color-water-700: #0369A1;
+  --color-water-800: #075985;
+  --color-water-900: #0C4A6E;
+  --color-aqua-50: #ECFEFF;
+  --color-aqua-100: #CFFAFE;
+  --color-aqua-300: #67E8F9;
+  --color-aqua-500: #06B6D4;
+  --color-aqua-700: #0E7490;
+  --color-teal-500: #14B8A6;
+}
+
+:root {
+  --radius: 0.75rem;
+  --background: #F0F9FF;
+  --foreground: #0C4A6E;
+  --card: #FFFFFF;
+  --card-foreground: #0C4A6E;
+  --popover: #FFFFFF;
+  --popover-foreground: #0C4A6E;
+  --primary: #0EA5E9;
+  --primary-foreground: #FFFFFF;
+  --secondary: #E0F2FE;
+  --secondary-foreground: #0369A1;
+  --muted: #E0F2FE;
+  --muted-foreground: #0369A1;
+  --accent: #CFFAFE;
+  --accent-foreground: #0E7490;
+  --destructive: #E11D48;
+  --destructive-foreground: #FFFFFF;
+  --border: #BAE6FD;
+  --input: #BAE6FD;
+  --ring: #38BDF8;
+  --chart-1: #0EA5E9;
+  --chart-2: #06B6D4;
+  --chart-3: #14B8A6;
+  --chart-4: #38BDF8;
+  --chart-5: #0369A1;
+  --sidebar: rgba(255,255,255,0.85);
+  --sidebar-foreground: #0C4A6E;
+  --sidebar-primary: #0EA5E9;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #E0F2FE;
+  --sidebar-accent-foreground: #0369A1;
+  --sidebar-border: #BAE6FD;
+  --sidebar-ring: #38BDF8;
+}
+
+.dark {
+  --background: #0C4A6E;
+  --foreground: #F0F9FF;
+  --card: #075985;
+  --card-foreground: #F0F9FF;
+  --popover: #075985;
+  --popover-foreground: #F0F9FF;
+  --primary: #38BDF8;
+  --primary-foreground: #0C4A6E;
+  --secondary: #0369A1;
+  --secondary-foreground: #F0F9FF;
+  --muted: #075985;
+  --muted-foreground: #BAE6FD;
+  --accent: #0E7490;
+  --accent-foreground: #ECFEFF;
+  --destructive: #F43F5E;
+  --destructive-foreground: #FFFFFF;
+  --border: rgba(186,230,253,0.2);
+  --input: rgba(186,230,253,0.25);
+  --ring: #38BDF8;
+  --sidebar: #075985;
+  --sidebar-foreground: #F0F9FF;
+  --sidebar-primary: #38BDF8;
+  --sidebar-primary-foreground: #0C4A6E;
+  --sidebar-accent: #0369A1;
+  --sidebar-accent-foreground: #F0F9FF;
+  --sidebar-border: rgba(186,230,253,0.2);
+  --sidebar-ring: #38BDF8;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html, body {
+    font-family: "Hind Siliguri", "Noto Sans Bengali", system-ui, sans-serif;
+  }
+
+  body {
+    color: var(--color-foreground);
+    background: linear-gradient(180deg, #F0F9FF 0%, #E0F2FE 60%, #BAE6FD 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+    position: relative;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: auto 0 0 0;
+    height: 220px;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 220' preserveAspectRatio='none'><path fill='%230EA5E9' fill-opacity='1' d='M0,128L60,138.7C120,149,240,171,360,165.3C480,160,600,128,720,122.7C840,117,960,139,1080,144C1200,149,1320,139,1380,133.3L1440,128L1440,220L0,220Z'/></svg>");
+    background-repeat: repeat-x;
+    background-size: 1440px 220px;
+    opacity: 0.12;
+    pointer-events: none;
+    z-index: 0;
+    animation: wave-drift 18s ease-in-out infinite;
+  }
+}
+
+@keyframes wave-drift {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-60px); }
+}
+
+@keyframes droplet-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes droplet-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.15); opacity: 0.7; }
+}
+
+@keyframes water-shimmer {
+  0% { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+@utility water-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px) saturate(140%);
+  border: 1px solid rgba(14, 165, 233, 0.18);
+  border-radius: 14px;
+  box-shadow: 0 4px 24px rgba(14, 165, 233, 0.08);
+}
+
+@utility water-glass {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(14px) saturate(160%);
+  border: 1px solid rgba(14, 165, 233, 0.18);
+}
+
+@utility water-shimmer {
+  background: linear-gradient(90deg, rgba(186,230,253,0.4) 0%, rgba(224,242,254,0.8) 50%, rgba(186,230,253,0.4) 100%);
+  background-size: 800px 100%;
+  animation: water-shimmer 1.6s linear infinite;
+}
+
+@utility droplet-float {
+  animation: droplet-float 4s ease-in-out infinite;
+}
+
+@utility droplet-pulse {
+  animation: droplet-pulse 1.4s ease-in-out infinite;
+}
